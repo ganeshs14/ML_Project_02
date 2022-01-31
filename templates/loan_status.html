@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Loan Status</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/main.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+</head>
+
+<body>
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h1 class="header center orange-text" align='center'>LOAN STATUS PREDECTION</h1>
+        <div class='row' align='center'>
+            <img src='https://www.cibil.com/resources/cibil/img/article/read-cir2.jpg' alt='Loan_Status' height="150px" width="500px">
+        </div>    
+
+            <div class="row center">
+                <h4 class="header col s12 light" align='center'>Model Predict's the Loan_Status
+                    <br>
+                </h4>
+            </div>
+            
+            <div class="row" align='center'>
+                <form action='/predict' method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <label for="gender"><b>Gender</b></label>
+                            <br>
+                            <input id="gender" name='Gender' type="text" class="validate" list='Gender'>
+                            <datalist id='Gender'>
+                                <option value="0">Male</option>
+                                <option value="1">Female</option>
+                            </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+
+                            <label for="dependents"><b>Dependents</b></label>
+                            <br>
+                            <input id="dependents" name="Dependents" type="text" class="validate" list="Dependent">
+                            <datalist id='Dependent'>
+                                <option value="0">No Dependent</option>
+                                <option value="1">One Dependent</option>
+                                <option value="2">Two Dependents</option>
+                                <option value="3">3+ Dependents</option>
+                            </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="education"><b>Education</b></label>
+                            <br>
+                            <input id="education" name="Education" type="text" class="validate" list="edu">
+                            <datalist id='edu'>
+                                <option value="0">Graduated</option>
+                                <option value="1">Non-Graduated</option>
+                            </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="self_Employed"><b>Self Employment</b></label>
+                            <br>
+                            <input id="self_Employed" name="Self Employment" type="text" class="validate" list="se">
+                            <datalist id="se">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>    
+                            </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="applicantIncome"><b>Applicant Income</b></label>
+                            <br>
+                            <input id="applicantIncome" name="ApplicantIncome" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="coapplicantIncome"><b>Coapplicant Income</b></label>
+                            <br>
+                            <input id="coapplicantIncome" name="CoapplicantIncome" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="loanAmount"><b>Loan Amount</b></label>
+                            <br>
+                            <input id="loanAmount" name="LoanAmount" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="loan_Amount_Term"><b>Loan Amount Term</b></label>
+                            <br>
+                            <input id="loan_Amount_Term" name="Loan_Amount_Term" type="text" class="validate"
+                                list="hwh">
+                            <datalist id="hwh">
+                                <option value="480"></option>
+                                <option value="360"></option>
+                                <option value="300"></option>
+                                <option value="240"></option>
+                                <option value="180"></option>
+                                <option value="120"></option>
+                                <option value="90"></option>
+                                <option value="60"></option>
+                            </datalist>
+                        </div>
+            
+                        <div class="input-field col s4">
+                            <label for="credit_History"><b>Credit History</b></label>
+                            <br>
+                            <input id="credit_History" name="Credit_History" type="text" class="validate" list="ch">
+                            <datalist id="ch">
+                                <option value="0"></option>
+                                <option value="1"></option>
+                            </datalist>
+                        </div>
+
+                        <div class="input-field col s4" align="center">
+                            <label for="property_Area"><b>Property Area</b></label>
+                            <br>
+                            <input id="property_Area" name="Property_Area" type="text" class="validate" list="pa">
+                            <datalist id="pa">
+                                <option value="0">Rural</option>
+                                <option value="1">Semi-Urban</option>
+                                <option value="2">Urban</option>
+                            </datalist>
+                        </div>
+
+                    </div>
+                    <h1></h1>
+                    <div class="row center">
+
+                        <button type="submit" class="btn-large waves-effect waves-light orange">Loan Status</button>
+                    </div>
+                </form>
+                <hr>
+                <div class="row center">
+                    <h2></h2>
+                    <h2></h2>
+                </div>
+                <br>
+                    <h2 align="center"><b>{{ pred }}</b></h2>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="page-footer orange">
+        <div class="footer-copyright">
+            <div class="container">
+
+                <div aria-label="Social Bar">
+                    <a href="https://www.linkedin.com/in/ganesh-shelar" target="_blank" rel="noreferrer noopener">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-128.png"
+                            alt="LinkedIn" height="20" weidth="20" />
+                    </a>
+
+                    <a href="http://www.twitter.com/GaneshS46949060" target="_blank" rel="noreferrer noopener">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png"
+                            alt="Twitter" height="20" weidth="20" />
+                    </a>
+
+                    <a href="https://instagram.com/_.ganesh._14/" target="_blank" rel="noreferrer noopener">
+                        <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png"
+                            alt="Instagram" height="20" weidth="20" />
+                    </a>
+
+                    <a href="https://github.com/ganeshs14" target="_blank" rel="noreferrer noopener">
+                        <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-128.png"
+                            alt="GitHub" height="20" weidth="20" />
+                    </a>
+
+                </div>
+                <h5>Made by <a class="orange-text text-lighten-3"
+                        href="https://ganeshs0520.wixsite.com/portfolio">Ganesh
+                        Shelar</a>
+                </h5>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
