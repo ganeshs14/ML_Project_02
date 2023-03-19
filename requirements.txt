@@ -1,3 +1,4 @@
+pywin32==304
 anyio==3.6.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
@@ -104,5 +105,4 @@ webencodings==0.5.1
 websocket-client==1.5.1
 Werkzeug==2.2.3
 widgetsnbextension==4.0.5
-pywin32==305
 gunicorn
