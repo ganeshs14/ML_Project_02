@@ -104,4 +104,5 @@ webencodings==0.5.1
 websocket-client==1.5.1
 Werkzeug==2.2.3
 widgetsnbextension==4.0.5
+pypiwin32==223
 gunicorn
