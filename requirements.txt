@@ -111,3 +111,4 @@ wcwidth==0.2.5
 webencodings==0.5.1
 Werkzeug==2.2.2
 wrapt==1.14.1
+gunicorn
